@@ -51,5 +51,15 @@ chunks, just use the `long_env_prepare()` function provided with this package:
 
 ```php
 <?php
-  print_r(long_env_prepare('SUPER LONG STRING'));
+  json_encode(long_env_prepare('KEY', 'SUPER LONG STRING'), JSON_PRETTY_PRINT);
 ```
+
+```javascript
+{
+    "KEY1": "-----BEGIN PRIVATE K",
+    "KEY2": "EY-----\ndasokd aoskd",
+    "KEY3": "o aksdoaskd oaskdo a"
+}
+```
+
+That's it - copy & paste these one by one into your dashboard (eg. AWS Elastic Beanstalk's Configuration tab)

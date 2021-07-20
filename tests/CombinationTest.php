@@ -10,7 +10,7 @@ class CombinationTest extends \PHPUnit\Framework\TestCase {
         $chunks = long_env_prepare('SUPER_KEY', $contents, 20);
 
         $this->assertEquals(ceil(strlen($contents) / 20), count($chunks));
-
+        
         foreach ($chunks as $name => $value) {
             putenv("{$name}={$value}");
         }
